@@ -2,9 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css"
+	href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+
     <title>Signup Result</title>
 </head>
 <body>
-    Congrats! You've created an account. Continue.
+    Congrats! You have created an account. Continue.
+     <p th:text="'Hello, ' + ${name} + '!'" /> 
 </body>
 </html>

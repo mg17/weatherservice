@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
+      <link rel="stylesheet" type="text/css"
+	href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
     <title>Signup</title>
 </head>
 <body>
@@ -16,6 +18,7 @@
                 <td>Age:</td>
                 <td><input type="password" th:field="*{password}" /></td>
                 <td th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</td>
+                <p th:text="'Hello, ' + ${name} + '!'" />
             </tr>
             <tr>
                 <td><button type="submit">Submit</button></td>
