@@ -19,14 +19,15 @@ public class WeatherServiceManager
     private Weather weatherData = null;
     private String m_sWeatherJson;
     
-    // Gets the overall weather JSON string from the 3rd party web service.
+    /**
+     * Gets the overall weather JSON string from the 3rd party wev service.
+     * @param sCity 
+     */
     public void callWeatherWebService(String sCity){
 
     	String sServiceReturnJson = "";
 
     	try {
-
-            // Call weather API.
             URL url = new URL("http://api.openweathermap.org/data/2.5/weather?q=" +
                     sCity + "&appid=1868f2463a960613c0a78b66a99b5e5f&units=imperial");
             BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));

@@ -1,5 +1,7 @@
-package com.bytebistro.weatherservice;
+package com.bytebistro.weatherservice.controller;
 
+import com.bytebistro.weatherservice.SignupForm;
+import com.bytebistro.weatherservice.WeatherServiceManager;
 import javax.validation.Valid;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 
@@ -16,6 +18,8 @@ import org.springframework.ui.Model;
 
 @Controller
 public class WebController  extends WebMvcConfigurerAdapter{
+    WeatherServiceManager weatherService;
+    
 @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/hello").setViewName("hello");
@@ -33,9 +37,14 @@ public class WebController  extends WebMvcConfigurerAdapter{
         else
             return "results";
     }
-      @RequestMapping("/results")
-    public String hello(Model model, @RequestParam(value="name", required=false, defaultValue="Person") String name) {
-        model.addAttribute("name", name);
-        return "results";
+      @RequestMapping("/weather")
+    public String hello(Model model, @RequestParam(value="name", required=false, defaultValue="Escondido") String name) {
+        weatherService = new WeatherServiceManager();
+        weatherService.callWeatherWebService(name);
+        
+        model.addAttribute("name", name + " "+ weatherService.getCurrentTemp());
+        
+        
+        return "weather";
     }
 }
