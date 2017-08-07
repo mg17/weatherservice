@@ -3,7 +3,7 @@ package com.bytebistro.weatherservice;
 
 import com.google.gson.annotations.SerializedName;
 
-public class WeatherObject
+public class MainObject
 {  
 
     @SerializedName("temp")
@@ -20,5 +20,7 @@ public class WeatherObject
     
     @SerializedName("temp_max")
     float temp_max = 0;  
+    
+  
       
 }

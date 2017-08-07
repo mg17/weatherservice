@@ -16,7 +16,7 @@ import java.util.Scanner;
 
 public class WeatherServiceManager
 { 
-    private Weather weatherData = null;
+    private WeatherData weatherData = null;
     private String m_sWeatherJson;
     
     /**
@@ -56,7 +56,8 @@ public class WeatherServiceManager
 
         Gson gson = new GsonBuilder().create();
         
-        weatherData = gson.fromJson(m_sWeatherJson, Weather.class);
+        weatherData = gson.fromJson(m_sWeatherJson, WeatherData.class);
+        
 
     }
     
@@ -103,6 +104,11 @@ public class WeatherServiceManager
     public long getSunsetTime() {
         
         return weatherData.sys.sunset;
+    }
+    
+     public String getDescription() {
+        
+        return weatherData.weather[0].description;
     }
     
     /*

@@ -42,7 +42,15 @@ public class WebController  extends WebMvcConfigurerAdapter{
         weatherService = new WeatherServiceManager();
         weatherService.callWeatherWebService(name);
         
-        model.addAttribute("name", name + " "+ weatherService.getCurrentTemp());
+        model.addAttribute("name", weatherService.getCityName());
+        model.addAttribute("currentTemp", weatherService.getCurrentTemp());
+        model.addAttribute("high", weatherService.getHighTemp());
+        model.addAttribute("low", weatherService.getLowTemp());
+        model.addAttribute("sunrise", weatherService.getSunriseTime());
+        model.addAttribute("sunset", weatherService.getSunsetTime());
+        model.addAttribute("description", weatherService.getDescription());
+        
+        
         
         
         return "weather";
