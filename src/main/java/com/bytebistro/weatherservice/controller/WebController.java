@@ -22,7 +22,7 @@ public class WebController  extends WebMvcConfigurerAdapter{
     
 @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/hello").setViewName("hello");
+        registry.addViewController("/").setViewName("weather");
     }
 
     @GetMapping("/signup")
