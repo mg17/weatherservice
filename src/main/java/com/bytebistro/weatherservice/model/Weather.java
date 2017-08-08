@@ -12,16 +12,17 @@ import com.google.gson.annotations.SerializedName;
  * @author keith
  */
 public class Weather {
+
     @SerializedName("id")
-    int id  = 0;
-    
+    int id = 0;
+
     @SerializedName("main")
     String main = "";
-    
-      @SerializedName("description")
+
+    @SerializedName("description")
     String description = null;
-      
+
     @SerializedName("icon")
     String icon = "";
-   
+
 }

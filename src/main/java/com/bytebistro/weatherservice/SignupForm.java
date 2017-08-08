@@ -4,16 +4,17 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 public class SignupForm {
+
     @NotNull
-    @Size(min=3)
+    @Size(min = 3)
     private String email;
 
     @NotNull
-    @Size(min=5)
+    @Size(min = 5)
     private String password;
 
     @NotNull
-    @Size(min=5)
+    @Size(min = 5)
     private String password_confirmation;
 
     public String getEmail() {
