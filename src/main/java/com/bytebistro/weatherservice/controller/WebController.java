@@ -1,5 +1,6 @@
 package com.bytebistro.weatherservice.controller;
 
+import com.bytebistro.weatherservice.QueryForm;
 import com.bytebistro.weatherservice.SignupForm;
 import com.bytebistro.weatherservice.model.WeatherServiceManager;
 import javax.validation.Valid;
@@ -20,33 +21,27 @@ public class WebController extends WebMvcConfigurerAdapter {
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/").setViewName("weather");
+        registry.addViewController("/").setViewName("search");
     }
 
-    @GetMapping("/signup")
+    @GetMapping(value = {"/", "/search"})
     public String showForm(SignupForm signupForm) {
-        return "signup";
+        return "search";
     }
 
     @PostMapping("/signup")
-    public String checkSignupInfo(@Valid SignupForm signupForm, BindingResult bindingResult) {
-        if (bindingResult.hasErrors()) {
-            return "results";
-        } else {
-            return "results";
-        }
+    public String checkSignupInfo( @Valid QueryForm queryForm, BindingResult bindingResult) {
+            return "weather";
     }
 
-    @RequestMapping(value = {"/", "/weather"})
-    public String hello(Model model, @RequestParam(value = "name", required = false, defaultValue = "Escondido") String name) {
+    @RequestMapping("/weather")
+    public String weatherService(Model model, @RequestParam(value = "name", required = false, defaultValue = "Escondido") String name) {
         weatherService = new WeatherServiceManager();
         weatherService.callWeatherWebService(name);
-
         model.addAttribute("name", weatherService.getCityName());
         model.addAttribute("currentTemp", weatherService.getCurrentTemp());
         model.addAttribute("high", weatherService.getHighTemp());
         model.addAttribute("low", weatherService.getLowTemp());
-
         model.addAttribute("sunrise", weatherService.getSunriseTime());
         model.addAttribute("sunset", weatherService.getSunsetTime());
         model.addAttribute("description", weatherService.getDescription());

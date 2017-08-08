@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+      <link rel="stylesheet" type="text/css"
+	href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <title>Search</title>
+    <script src="webjars/jquery/2.0.3/jquery.min.js"></script>
+    
+</head>
+<body>
+    <p>This is a test</p>
+    <form action="/weather" method="GET">
+    Number: <input type="text" name="name" value="" /><br />
+
+    <input type="submit" name="submit" value="city" />
+</form>
+    <!--
+    <form action="#" th:action="@{/weather}" th:object="${queryForm}" method="GET">
+        <table>
+            <tr>
+                <td><p>Enter City Name</p></td>
+                <td><input type="text" th:field="*{city}" /></td>
+       
+            </tr>       
+              <tr>  
+                <td><button type="submit">Submit</button></td>
+            </tr>
+        </table>
+    </form>
+    -->
+    <p th:text="'Current tempurature is ' + ${currentTemp}" />
+    <p th:text="'High ' + ${high}" />
+    <p th:text="'low ' + ${low} " />
+    <p th:text="'sunset ' + ${sunset} " />
+    <p th:text="'Description :' + ${description} " />
+</body>
+
+</html>

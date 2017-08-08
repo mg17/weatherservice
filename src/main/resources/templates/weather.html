@@ -9,11 +9,19 @@
     <title>Weather Service</title>
 </head>
 <body>
+    <form action="/weather" method="GET">
+    Number: <input type="text" name="name" value="" /><br />
+
+    <input type="submit" name="submit" value="city" />
+</form>
     <p th:text="'Weather in ' + ${name} + '!'" />
     <p th:text="'Current tempurature is ' + ${currentTemp}" />
     <p th:text="'High ' + ${high}" />
     <p th:text="'low ' + ${low} " />
     <p th:text="'sunset ' + ${sunset} " />
     <p th:text="'Description :' + ${description} " />
+    <form action="#" th:action="@{/}" th:object="${signupForm}" method="post">
+    
+    </form>
 </body>
 </html>
