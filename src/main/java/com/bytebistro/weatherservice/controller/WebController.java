@@ -45,6 +45,7 @@ public class WebController extends WebMvcConfigurerAdapter {
         model.addAttribute("sunrise", weatherService.getSunriseTime());
         model.addAttribute("sunset", weatherService.getSunsetTime());
         model.addAttribute("description", weatherService.getDescription());
+        model.addAttribute("icon", weatherService.getIcon());
         return "weather";
     }
 

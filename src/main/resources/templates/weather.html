@@ -22,7 +22,9 @@
             </form>
         </div>
         <div class="container">
-             <table>
+            <img  th:src="'http://openweathermap.org/img/w/' + ${icon} + '.png'" alt="Mountain View" ></img>
+            <!--th:src="'http://openweathermap.org/img/w/' + ${icon} + '.jpg'"-->
+            <table>
                  <ul class="list-group">
                      <li class="list-group-item" th:text="'Weather in ' + ${name} + '!'" ></li>
             <li class="list-group-item" th:text="'Description : ' + ${description} " ></li>

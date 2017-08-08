@@ -127,6 +127,11 @@ public class WeatherServiceManager {
 
         return weatherData.sys.country;
     }
+    
+    public String getIcon() {
+
+        return weatherData.weather[0].icon;
+    }
 
     // -------------------------------------------------------------------
     // ***********************************
