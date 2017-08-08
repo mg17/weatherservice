@@ -1,27 +1,39 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8"/>
-     <link rel="stylesheet" type="text/css" th:href="@{/styles/style.css}" />
+    <head>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" type="text/css" th:href="@{/styles/style.css}" />
+        <link rel="stylesheet" type="text/css"
+              href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+        <title>Weather Service</title>
+    </head>
+    <body>
+        <div class="container">
+        <div class="form-group">
+            <form action="/weather" method="GET">
+                <table>
+                    <tr>
+                        <h2>City</h2>
+                        <td><input type="text" class="form-control" name="name" value="" /></td>
 
-      <link rel="stylesheet" type="text/css"
-	href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
-    <title>Weather Service</title>
-</head>
-<body>
-    <form action="/weather" method="GET">
-    Number: <input type="text" name="name" value="" /><br />
+                        <td><input type="submit" class="btn btn-default" name="submit" value="submit" /></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div class="container">
+             <table>
+                 <ul class="list-group">
+                     <li class="list-group-item" th:text="'Weather in ' + ${name} + '!'" ></li>
+            <li class="list-group-item" th:text="'Description : ' + ${description} " ></li>
+            <li class="list-group-item" th:text="'Current tempurature is ' + ${currentTemp}"></li>
+            <li class="list-group-item" th:text="'High ' + ${high}" ></li>
+            <li class="list-group-item" th:text="'low ' + ${low} " ></li>
+            <li class="list-group-item" th:text="'sunset ' + ${sunset} " ></li>
+</ul>
+                </table>
 
-    <input type="submit" name="submit" value="city" />
-</form>
-    <p th:text="'Weather in ' + ${name} + '!'" />
-    <p th:text="'Current tempurature is ' + ${currentTemp}" />
-    <p th:text="'High ' + ${high}" />
-    <p th:text="'low ' + ${low} " />
-    <p th:text="'sunset ' + ${sunset} " />
-    <p th:text="'Description :' + ${description} " />
-    <form action="#" th:action="@{/}" th:object="${signupForm}" method="post">
-    
-    </form>
-</body>
+        </div>
+             </div>
+    </body>
 </html>

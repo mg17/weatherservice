@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
+    
       <link rel="stylesheet" type="text/css"
 	href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
     <title>Search</title>
@@ -9,11 +10,15 @@
     
 </head>
 <body>
-    <p>This is a test</p>
     <form action="/weather" method="GET">
-    Number: <input type="text" name="name" value="" /><br />
+         <table>
+            <tr>
+                <td>City</td>
+                <td><input type="text" name="name" value="" /></td>
 
-    <input type="submit" name="submit" value="city" />
+                <td><input type="submit" name="submit" value="submit" /></td>
+            </tr>
+         </table>
 </form>
     <!--
     <form action="#" th:action="@{/weather}" th:object="${queryForm}" method="GET">

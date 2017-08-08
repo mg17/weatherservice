@@ -21,20 +21,20 @@ public class WebController extends WebMvcConfigurerAdapter {
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/").setViewName("search");
+        registry.addViewController("/").setViewName("weather");
     }
 
-    @GetMapping(value = {"/", "/search"})
+    @GetMapping("/search")
     public String showForm(SignupForm signupForm) {
         return "search";
     }
 
     @PostMapping("/signup")
-    public String checkSignupInfo( @Valid QueryForm queryForm, BindingResult bindingResult) {
-            return "weather";
+    public String checkSignupInfo(@Valid QueryForm queryForm, BindingResult bindingResult) {
+        return "weather";
     }
 
-    @RequestMapping("/weather")
+    @RequestMapping(value = {"/", "/weather"})
     public String weatherService(Model model, @RequestParam(value = "name", required = false, defaultValue = "Escondido") String name) {
         weatherService = new WeatherServiceManager();
         weatherService.callWeatherWebService(name);
