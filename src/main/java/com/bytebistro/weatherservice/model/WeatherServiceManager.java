@@ -109,9 +109,9 @@ public class WeatherServiceManager {
 
     String timeToString(long time) {
         Instant instant = Instant.ofEpochSecond(time);
-        ZoneId zoneId = ZoneId.of("America/Montreal");
+        ZoneId zoneId = ZoneId.of("America/Los_Angeles");
         ZonedDateTime zdt = ZonedDateTime.ofInstant(instant, zoneId);
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("H:mm:ss");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("h:mm a");
         String output = zdt.format(formatter);
         return output;
     }
