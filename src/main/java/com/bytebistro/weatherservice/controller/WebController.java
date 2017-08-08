@@ -1,7 +1,11 @@
 package com.bytebistro.weatherservice.controller;
 
 import com.bytebistro.weatherservice.SignupForm;
-import com.bytebistro.weatherservice.WeatherServiceManager;
+import com.bytebistro.weatherservice.model.WeatherServiceManager;
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import javax.validation.Valid;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 
@@ -37,7 +41,7 @@ public class WebController  extends WebMvcConfigurerAdapter{
         else
             return "results";
     }
-      @RequestMapping("/weather")
+      @RequestMapping(value={"/", "/weather"})
     public String hello(Model model, @RequestParam(value="name", required=false, defaultValue="Escondido") String name) {
         weatherService = new WeatherServiceManager();
         weatherService.callWeatherWebService(name);
@@ -46,13 +50,12 @@ public class WebController  extends WebMvcConfigurerAdapter{
         model.addAttribute("currentTemp", weatherService.getCurrentTemp());
         model.addAttribute("high", weatherService.getHighTemp());
         model.addAttribute("low", weatherService.getLowTemp());
-        model.addAttribute("sunrise", weatherService.getSunriseTime());
+        
+        model.addAttribute("sunrise",  weatherService.getSunriseTime());
         model.addAttribute("sunset", weatherService.getSunsetTime());
         model.addAttribute("description", weatherService.getDescription());
-        
-        
-        
-        
         return "weather";
     }
+ 
+    
 }

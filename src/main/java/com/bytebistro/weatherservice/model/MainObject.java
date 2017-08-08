@@ -1,5 +1,5 @@
 
-package com.bytebistro.weatherservice;
+package com.bytebistro.weatherservice.model;
 
 import com.google.gson.annotations.SerializedName;
 

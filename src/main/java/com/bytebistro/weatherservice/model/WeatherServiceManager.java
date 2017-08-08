@@ -1,6 +1,7 @@
-package com.bytebistro.weatherservice;
+package com.bytebistro.weatherservice.model;
 
 // Classes for reading web service.
+import com.bytebistro.weatherservice.model.WeatherData;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
@@ -11,6 +12,10 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 
@@ -96,14 +101,14 @@ public class WeatherServiceManager
         return weatherData.main.temp_min;
     }
     
-    public long getSunriseTime() {
-        
-        return weatherData.sys.sunrise;
+    public String getSunriseTime() {
+        String time = timeToString( weatherData.sys.sunrise);
+        return time;
     }
     
-    public long getSunsetTime() {
-        
-        return weatherData.sys.sunset;
+    public String getSunsetTime() {
+        String time = timeToString( weatherData.sys.sunset);
+        return time;
     }
     
      public String getDescription() {
@@ -111,6 +116,14 @@ public class WeatherServiceManager
         return weatherData.weather[0].description;
     }
     
+    String timeToString(long time){
+        Instant instant = Instant.ofEpochSecond( time);
+        ZoneId zoneId = ZoneId.of( "America/Montreal" );
+        ZonedDateTime zdt = ZonedDateTime.ofInstant( instant , zoneId );
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern( "H:mm:ss" );
+        String output = zdt.format( formatter );
+        return output;
+    }
     /*
     // This does not work yet due to JSON formatting [{ instead of the expected {
     public String getWeatherDesc() {
