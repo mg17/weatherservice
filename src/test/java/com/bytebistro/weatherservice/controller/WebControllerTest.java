@@ -37,9 +37,9 @@ public class WebControllerTest {
 
     @Test
     public void shouldConnect() throws Exception {
-        this.mockMvc.perform(get("/")).andDo(print()).andExpect(status().isOk()).andExpect(content().string(containsString("Weather Service3")));
+        this.mockMvc.perform(get("/")).andDo(print()).andExpect(status().isOk()).andExpect(content().string(containsString("Weather Service")));
     }
-
+    @Test
     public void shouldConnectTo() throws Exception {
         this.mockMvc.perform(get("/weather")).andDo(print()).andExpect(status().isOk());
 
