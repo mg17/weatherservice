@@ -2,6 +2,7 @@ package com.bytebistro.weatherservice.controller;
 
 import com.bytebistro.weatherservice.QueryForm;
 import com.bytebistro.weatherservice.SignupForm;
+import com.bytebistro.weatherservice.WeatherAlerter;
 import com.bytebistro.weatherservice.model.Subscription;
 import com.bytebistro.weatherservice.model.WeatherServiceManager;
 import javax.validation.Valid;
@@ -86,11 +87,21 @@ public class WebController extends WebMvcConfigurerAdapter {
         return "weather";
     }
 
+    // Uses WeatherAlerter to send alerts
+    @RequestMapping("/send_alerts")
+    public @ResponseBody
+    Subscription[] sendAlerts() {
+        Subscription[] listOfSubscribers = getSubscriptions();
+        for(int i = 0; i < listOfSubscribers.length; i++) {
+            // @TODO Construct body based on tomorrow's forecast...
+            String body = "";
+            WeatherAlerter.emailer(listOfSubscribers[i].getEmail(), body,"Your daily weather alert");
+        }
+        return new Subscription[0];
+    }
 
     // Returns JSON array that can then be fed to an third-party email service
-    @RequestMapping("/getsubscriptions")
-    public @ResponseBody
-    Subscription[] getSubscriptions() {
+    public Subscription[] getSubscriptions() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             connect = DriverManager.getConnection(sqlConnection);
