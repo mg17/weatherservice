@@ -85,6 +85,8 @@ public class WebController extends WebMvcConfigurerAdapter {
         return "weather";
     }
 
+
+    // Returns JSON array that can then be fed to an third-party email service
     @RequestMapping("/getsubscriptions")
     public @ResponseBody
     Subscription[] getSubscriptions() {
@@ -122,6 +124,7 @@ public class WebController extends WebMvcConfigurerAdapter {
             System.out.println("Caught an exception.");
             System.out.println(e);
         }
+        // If this query fails, return an empty array
         return new Subscription[0];
     }
 
