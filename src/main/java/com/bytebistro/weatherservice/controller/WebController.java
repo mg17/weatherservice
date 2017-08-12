@@ -19,14 +19,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-
 @Controller
 public class WebController extends WebMvcConfigurerAdapter {
 
     WeatherServiceManager weatherService;
     Connection connect = null;
-    String sqlConnection = "jdbc:mysql://cst438.cq7a2r1z7sxe.us-west-2.rds.amazonaws.com/weatherservice?" +
-                    "user=cst438&password=cst438123";
+    String sqlConnection = "jdbc:mysql://cst438.cq7a2r1z7sxe.us-west-2.rds.amazonaws.com/weatherservice?"
+            + "user=cst438&password=cst438123";
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
@@ -60,8 +59,8 @@ public class WebController extends WebMvcConfigurerAdapter {
 
     @RequestMapping("/subscribe")
     public String addSubscription(Model model, @RequestParam(value = "email", required = true, defaultValue = "") String email,
-                                  @RequestParam(value = "name", required = true, defaultValue = "") String name,
-                                  @RequestParam(value = "location", required = true, defaultValue = "") String location) {
+            @RequestParam(value = "name", required = true, defaultValue = "") String name,
+            @RequestParam(value = "location", required = true, defaultValue = "") String location) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             connect = DriverManager.getConnection(sqlConnection);
@@ -79,7 +78,7 @@ public class WebController extends WebMvcConfigurerAdapter {
             try {
                 connect.close();
                 System.out.println("Connection closed");
-            } catch(Exception e2) {
+            } catch (Exception e2) {
                 // Error closing connection
             }
         }
@@ -92,10 +91,10 @@ public class WebController extends WebMvcConfigurerAdapter {
     public @ResponseBody
     Subscription[] sendAlerts() {
         Subscription[] listOfSubscribers = getSubscriptions();
-        for(int i = 0; i < listOfSubscribers.length; i++) {
+        for (int i = 0; i < listOfSubscribers.length; i++) {
             // @TODO Construct body based on tomorrow's forecast...
             String body = "";
-            WeatherAlerter.emailer(listOfSubscribers[i].getEmail(), body,"Your daily weather alert");
+            WeatherAlerter.emailer(listOfSubscribers[i].getEmail(), body, "Your daily weather alert");
         }
         return new Subscription[0];
     }
@@ -111,7 +110,7 @@ public class WebController extends WebMvcConfigurerAdapter {
             ResultSet count = subCount.executeQuery();
             count.next();
             Subscription[] list = new Subscription[count.getInt(1)];
-            for(int i = 0; i < count.getInt(1); i++) {
+            for (int i = 0; i < count.getInt(1); i++) {
                 list[i] = new Subscription();
             }
 
@@ -121,7 +120,7 @@ public class WebController extends WebMvcConfigurerAdapter {
 
             // Iterate through our results and insert them into the array
             int cur_index = 0;
-            while(results.next()) {
+            while (results.next()) {
                 list[cur_index].setName(results.getString(1));
                 list[cur_index].setEmail(results.getString(2));
                 list[cur_index].setLocation(results.getString(3));
@@ -132,7 +131,7 @@ public class WebController extends WebMvcConfigurerAdapter {
             };
 
             return list;
-        } catch(Exception e) {
+        } catch (Exception e) {
             System.out.println("Caught an exception.");
             System.out.println(e);
         }
