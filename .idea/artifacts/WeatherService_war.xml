@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="WeatherService:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="weatherservice-1.0-SNAPSHOT.war">
-      <element id="artifact" artifact-name="WeatherService:war exploded" />
-    </root>
-  </artifact>
-</component>
