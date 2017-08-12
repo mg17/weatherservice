@@ -45,17 +45,15 @@ public class WeatherServiceManager {
         m_sWeatherJson = sServiceReturnJson;
 
         // Turn raw json into java object heirarchy using Google's gson.
-        convertJsonToJavaObject();
+        convertJsonToJavaObject(m_sWeatherJson);
     }
 
     // Uses Google's gson library to convert json into filled java objects
     // using the java object heirarchy that you already created.
-    private void convertJsonToJavaObject() {
+     void convertJsonToJavaObject(String weatherJson) {
 
         Gson gson = new GsonBuilder().create();
-
-        weatherData = gson.fromJson(m_sWeatherJson, WeatherData.class);
-
+        weatherData = gson.fromJson(weatherJson, WeatherData.class);
     }
 
     public String getGsonOutput() {
@@ -79,8 +77,10 @@ public class WeatherServiceManager {
 
         return weatherData.name;
     }
-
-    // getHighTemp method
+    /**
+     * 
+     * @return High temp
+     */
     public float getHighTemp() {
 
         return weatherData.main.temp_max;
