@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da436798-fd77-4b17-b1fa-e9d2af8e09e5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_mail_mail_1_4_7.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/bytebistro/weatherservice/WeatherAlerter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/WeatherService_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/WeatherService_war_exploded.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WeatherService.iml" afterPath="$PROJECT_DIR$/WeatherService.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bytebistro/weatherservice/controller/WebController.java" afterPath="$PROJECT_DIR$/src/main/java/com/bytebistro/weatherservice/controller/WebController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -36,8 +29,8 @@
       <file leaf-file-name="WeatherAlerter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/bytebistro/weatherservice/WeatherAlerter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="102">
+              <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#765#958#0" expanded="true" />
@@ -47,28 +40,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WebController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="WebController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/bytebistro/weatherservice/controller/WebController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="122" column="29" lean-forward="false" selection-start-line="122" selection-start-column="29" selection-end-line="122" selection-end-column="29" />
+            <state relative-caret-position="425">
+              <caret line="97" column="8" lean-forward="false" selection-start-line="97" selection-start-column="8" selection-end-line="97" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1502511256408" expanded="true" signature="3044:3103" ph="INSERT INTO weatherservice.alerts... " />
-                <marker date="1502511256408" expanded="true" signature="4175:4217" ph="SELECT COUNT... alerts" />
-                <marker date="1502511256408" expanded="true" signature="4624:4638" ph="SELECT * FRO... alerts" />
-                <marker date="1502511256408" expanded="true" signature="4624:4659" ph="SELECT * FRO... alerts" />
+                <marker date="1502512392397" expanded="true" signature="3097:3156" ph="INSERT INTO weatherservice.alerts... " />
+                <marker date="1502512392397" expanded="true" signature="4681:4723" ph="SELECT COUNT... alerts" />
+                <marker date="1502512392397" expanded="true" signature="5130:5144" ph="SELECT * FRO... alerts" />
+                <marker date="1502512392397" expanded="true" signature="5130:5165" ph="SELECT * FRO... alerts" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="0">
-                <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
+              <first_editor relative-caret-position="238">
+                <caret line="14" column="32" lean-forward="false" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -191,8 +184,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/bytebistro/weatherservice/model/Subscription.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/bytebistro/weatherservice/WeatherAlerter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bytebistro/weatherservice/controller/WebController.java" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/main/java/com/bytebistro/weatherservice/controller/WebController.java" />
       </list>
     </option>
   </component>
@@ -477,12 +470,12 @@
       <updated>1501218641735</updated>
       <workItem from="1501218644676" duration="2542000" />
       <workItem from="1501277833583" duration="1200000" />
-      <workItem from="1502496804096" duration="10957000" />
+      <workItem from="1502496804096" duration="11667000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14699000" />
+    <option name="totallyTimeSpent" value="15409000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1933" height="1053" extended-state="6" />
@@ -763,10 +756,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="238">
+            <caret line="14" column="32" lean-forward="false" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bytebistro/weatherservice/WeatherAlerter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="102">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#765#958#0" expanded="true" />
@@ -777,26 +781,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bytebistro/weatherservice/controller/WebController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="122" column="29" lean-forward="false" selection-start-line="122" selection-start-column="29" selection-end-line="122" selection-end-column="29" />
+        <state relative-caret-position="425">
+          <caret line="97" column="8" lean-forward="false" selection-start-line="97" selection-start-column="8" selection-end-line="97" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1502511256408" expanded="true" signature="3044:3103" ph="INSERT INTO weatherservice.alerts... " />
-            <marker date="1502511256408" expanded="true" signature="4175:4217" ph="SELECT COUNT... alerts" />
-            <marker date="1502511256408" expanded="true" signature="4624:4638" ph="SELECT * FRO... alerts" />
-            <marker date="1502511256408" expanded="true" signature="4624:4659" ph="SELECT * FRO... alerts" />
+            <marker date="1502512392397" expanded="true" signature="3097:3156" ph="INSERT INTO weatherservice.alerts... " />
+            <marker date="1502512392397" expanded="true" signature="4681:4723" ph="SELECT COUNT... alerts" />
+            <marker date="1502512392397" expanded="true" signature="5130:5144" ph="SELECT * FRO... alerts" />
+            <marker date="1502512392397" expanded="true" signature="5130:5165" ph="SELECT * FRO... alerts" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
-            <folding />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
