@@ -24,6 +24,8 @@
                     </div>
                 </form>
             </div>
+<img  th:src="'http://openweathermap.org/img/w/' + ${icon} + '.png'" alt="Mountain View" ></img>
+            <!--th:src="'http://openweathermap.org/img/w/' + ${icon} + '.jpg'"-->
              <table>
                  <ul class="list-group">
                     <li class="list-group-item" th:text="'Weather in ' + ${name} + '!'" ></li>
@@ -32,6 +34,7 @@
                     <li class="list-group-item" th:text="'High ' + ${high}" ></li>
                     <li class="list-group-item" th:text="'low ' + ${low} " ></li>
                     <li class="list-group-item" th:text="'sunset ' + ${sunset} " ></li>
+                    
                 </ul>
             </table>
             <div class="row">
